@@ -8,9 +8,15 @@
  * Code Sources:
  */
 
-public abstract class GameObject {
+public class GameObject {
     private String name;
     private String description;
+
+    // Game Object Constructor
+    public GameObject(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 
     // Getters and Setters for GameObject, these methods are inherited by GameObject's children.
     public String getDescription() { return description; }

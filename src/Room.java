@@ -19,8 +19,7 @@ public class Room extends GameObeject {
      * @param description   - description of the room
      */
     public Room(String name, String description) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
     }
 
     // Getters and Setters for directional pointers

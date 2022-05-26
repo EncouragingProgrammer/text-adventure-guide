@@ -16,8 +16,7 @@ public class Item extends GameObeject {
      * @param description   - description of the item
      */
     public Item(String name, String description) {
-        this.name = name;
-        this.description = description;
+        super(name, description);
     }
 
 }
