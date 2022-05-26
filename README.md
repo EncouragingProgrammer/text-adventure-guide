@@ -1,5 +1,7 @@
 # text-adventure-guide
 A how-to guide on creating a text adventure game in Java.
+## Author
+Ryan Gustafson
 
 ## Introduction
 I am currently (while writing this) a student. The introductory Java course at my school requires students to create a text adventure game "Alice", based on "Alice in Wonderland" by Lewis Carrol, which can be frustrating for new students in an introductory programming course. The scope of the project can feel overwhelming. I have helped tutor two of my fellow classmates to get started on the project and work through some of the major problem solving involved. Other classmates have asked for help as well as this can be a very intimidating project. 
@@ -12,5 +14,31 @@ You are welcome to use my code as you see fit. I would appreciate it however if 
 
 Thank you!
 
-# Author
-Ryan Gustafson
+## Getting started
+When beginning a project like this, it is beneficial to think about the structure of your game, before jumping in and writing code. How can I use object-oriented principles for this project? What are the "things" in my game that I will need to use? Some important objects may include:
+- characters, players, npcs
+- rooms, locations, places
+- items, weapons, loot
+
+When considering these objects, what properties do they have in common? Most "things" will have a name and description, so I like to start there. We can now create a basic "GameObject" to be the parent class of all other subclasses of game objects with a basic constructor, and getter and setter methods.
+
+```java
+public class GameObject {
+    private String name;
+    private String description;
+
+    // Game Object Constructor
+    public GameObject(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    // Getters and Setters for GameObject, these methods are inherited by GameObject's children.
+    public String getDescription() { return description; }
+    public String getName() { return name; }
+    public void setDescription(String description) { this.description = description; }
+    public void setName(String name) { this.name = name; }
+}
+```
+
+
