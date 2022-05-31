@@ -14,6 +14,18 @@ public class Room extends GameObeject {
     private Room north, south, east, west;
 
     /**
+     * I am currently considering if I want to create a subclass to contain gameobjects that are able to have
+     * inventories. Currently I have some repetition in my Character / Room classes as they can both contain
+     * inventories, and I am debating how I want to handle the situation.
+     *
+     * I could also create a separate inventory class to handle inventories.
+     *
+     * Additionally, I want Room to have an "inventory" of Characters.
+     */
+    ArrayList<Item> inventory = new ArrayList<Item>[];
+
+
+    /**
      * Constructor for the Room object
      * @param name          - name of the room
      * @param description   - description of the room
@@ -38,4 +50,17 @@ public class Room extends GameObeject {
         this.south = south;
         this.west = west;
     }
+
+    public void getItem(Item thing) { inventory.add(thing); }
+
+    /**
+     * Check if the character has the item, remove it from their inventory and return the item.
+     * @param thing - of type item
+     * @return thing - of type item
+     */
+    public Item removeItem(Item thing) {
+        if (inventory.contains(thing)) {
+            inventory.remove(thing);
+        }
+        return thing;
 }
